@@ -1,0 +1,46 @@
+{% load static %}
+<link rel="stylesheet" href="{%static 'style.css'%}"/>
+<link rel="stylesheet" href="{%static 'footer.css'%}"/>
+<link rel="stylesheet" href="{%static 'projects.css'%}"/>
+<body>
+    <header>
+
+        <a href="#" class="logo">xxx</a>
+        <nav class="navbar">
+        <a href="#contact">talk to us</a>
+        <a href="#help">for help</a>
+        </nav>
+    </header>
+    
+   <!-- <article>
+    <a href="#"class="image"><img src="{{ Imges.image.url }}" alt="img" /></a>
+    <h3>{{ Imges.title }}</h3>
+    <p>{{Imges.desc}}</p>
+    <ul class="actions">
+        <li><a href="#" class="button">More</a></li>
+    </ul></article>-->
+
+
+{%for Imges in object_list%}
+ <div class="container">
+<section class="projects"id="projects">
+  
+    <div class="content">
+         <div class="project-card">
+              <div class="project-image">
+                 <a href="#"> <img src="{{ Imges.image.url }}" /></a>
+              </div>
+             <div class="project-info">
+                <h2 class="title" >{{Imges.title}}</h2>
+            <strong class="project-title"><span>{{Imges.desc}}</span>
+                <br/>
+            <a href="#" class="datels">more</a>
+            </strong>
+            </div>
+         </div>
+    </div>
+</section></div>{%endfor%}
+<footer class="footer">
+    <p> Copyright @<span>khasm</span></p>
+</footer>
+</body>
